@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ibrahim — Profile</title>
+
+  <style>
+    :root{
+      --bg:#f6f6fb;
+      --card:#ffffff;
+      --text:#12131a;
+      --muted:#555a6b;
+      --border:#e7e7f0;
+      --accent:#2563eb;
+      --shadow: 0 10px 26px rgba(0,0,0,.08);
+      --r: 14px;
+      --max: 920px;
+    }
+    [data-theme="dark"]{
+      --bg:#0f1220;
+      --card:#151a2e;
+      --text:#f2f3ff;
+      --muted:#b7b9d3;
+      --border:#2a3154;
+      --accent:#7aa2ff;
+      --shadow: 0 14px 34px rgba(0,0,0,.35);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 18px; }
+    header{
+      padding: 10px 0 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .top{
+      display:flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    nav a{
+      color: var(--muted);
+      margin-right: 12px;
+      font-size: 14px;
+    }
+    nav a:hover{ color: var(--text); text-decoration: none; }
+
+    .btn{
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .btn:hover{
+      border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+    }
+
+    main{ padding: 18px 0 44px; }
+    section{ margin-top: 16px; }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+    h1{ margin: 0 0 6px; font-size: clamp(22px, 4vw, 34px); }
+    h2{ margin: 0 0 10px; font-size: 18px; }
+    p{ margin: 0; color: var(--muted); }
+
+    .grid{
+      display:grid;
+      gap: 14px;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: start;
+    }
+
+    ul{ padding-left: 18px; margin: 8px 0 0; }
+    li{ margin: 6px 0; }
+
+    label{ font-size: 13px; color: var(--muted); }
+    select{
+      width: 100%;
+      padding: 10px 10px;
+      border-radius: 12px;
+      border:1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+      margin-top: 6px;
+    }
+
+    .proj-list{
+      margin-top: 12px;
+      display:grid;
+      gap: 10px;
+    }
+    .proj{
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 88%, var(--bg));
+    }
+    .proj b{ display:block; }
+    .meta{
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .tag{
+      display:inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      margin-right: 6px;
+      background: color-mix(in srgb, var(--card) 70%, var(--bg));
+    }
+
+    footer{
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 780px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap top">
+      <div>
+        <strong>Ibrahim</strong><br />
+        <span style="color:var(--muted);font-size:13px;">Personal profile</span>
+      </div>
+
+      <nav aria-label="sections">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="btn" id="themeBtn" type="button">Toggle theme</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card" aria-label="intro">
+      <h1>Hi — I’m Ibrahim.</h1>
+      <p>
+        I’m learning web development and building projects that feel practical.
+        This page is intentionally simple: HTML, CSS, and JavaScript only.
+      </p>
+    </section>
+
+    <section class="grid">
+      <section id="about" class="card" aria-label="about">
+        <h2>About</h2>
+        <p>
+          (Edit this) A quick intro about what you’re studying, what you like building,
+          and what kind of roles you’re aiming for.
+        </p>
+        <ul>
+          <li>Based in: NYC</li>
+          <li>Focused on: Frontend fundamentals</li>
+          <li>Goal: Ship clean, working web apps</li>
+        </ul>
+      </section>
+
+      <section id="skills" class="card" aria-label="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML (semantic structure)</li>
+          <li>CSS (responsive layout)</li>
+          <li>JavaScript (DOM + UI logic)</li>
+          <li>Git/GitHub</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="projects" class="card" aria-label="projects">
+      <h2>Projects</h2>
+      <p>JS feature here: filter the project list.</p>
+
+      <div style="margin-top:10px; max-width: 320px;">
+        <label for="filter">Filter by type</label>
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="dashboard">Dashboard</option>
+          <option value="app">App</option>
+        </select>
+      </div>
+
+      <div class="proj-list" id="projList"></div>
+    </section>
+
+    <section id="contact" class="card" aria-label="contact">
+      <h2>Contact</h2>
+      <p>
+        Email me or check out my work.
+      </p>
+      <p style="margin-top:10px;">
+        Email: <a href="mailto:ibrahim@example.com">ibrahimsaid736@gmail.com</a><br />
+        GitHub: <a href="#" onclick="return false;">https://github.com/kingofants01</a><br />
+        LinkedIn: <a href="#" onclick="return false;">https://www.linkedin.com/in/ibrahim-said1221/</a>
+      </p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Ibrahim — built with HTML/CSS/JS.
+    </footer>
+  </main>
+
+  <script>
+    // Theme toggle (localStorage)
+    const root = document.documentElement;
+    const themeBtn = document.getElementById("themeBtn");
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) root.setAttribute("data-theme", savedTheme);
+
+    themeBtn.addEventListener("click", () => {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      if (isDark) root.removeAttribute("data-theme");
+      else root.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", root.getAttribute("data-theme") || "");
+    });
+
+    // Projects (filter)
+    const projects = [
+      {
+        title: "AimSAT dashboard",
+        type: "dashboard",
+        desc: "A dashboard-style frontend with clean layout and reusable sections.",
+        tags: ["UI", "layout"]
+      },
+      {
+        title: "book-find",
+        type: "app",
+        desc: "A small app for searching and browsing books (practice project).",
+        tags: ["JavaScript", "DOM"]
+      },
+      {
+        title: "Task manager",
+        type: "app",
+        desc: "A simple task manager to practice state, UI updates, and structure.",
+        tags: ["JavaScript", "UI"]
+      }
+    ];
+
+    const filter = document.getElementById("filter");
+    const projList = document.getElementById("projList");
+
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    function render(){
+      const f = filter.value;
+      const list = projects.filter(p => f === "all" || p.type === f);
+
+      projList.innerHTML = list.map(p => `
+        <div class="proj">
+          <b>${escapeHtml(p.title)}</b>
+          <div style="color:var(--muted);">${escapeHtml(p.desc)}</div>
+          <div class="meta">
+            <span class="tag">#${escapeHtml(p.type)}</span>
+            ${p.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    filter.addEventListener("input", render);
+    render();
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+// to run this code, type in the terminal "Python -m http.server 8000", then visit http://localhost:8000 on Google Chrome
